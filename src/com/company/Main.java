@@ -14,12 +14,15 @@ public class Main {
     private static final String MSG9 = "Introdueix el tipus de cadira: ";
     private static final String MSG10 = "Introdueix l'alçada del quadrat: ";
     private static final String MSG11 = "Introdueix l'amplada del quadrat: ";
+    private static final String MSG12 = "Introdueix la llargària del quadrat: ";
+    private static final String MSG_Error = "Torna a introduir un valor natural: ";
 
     public static void main(String[] args) {
 	   Person alumne = new Person(); //alumne és una instància de la classe Person
-       Scanner sc = new Scanner(System.in);
-       System.out.println(MSG);
-       alumne.setName(sc.next());
+        Scanner sc = new Scanner(System.in);
+        System.out.println(MSG);
+        alumne.setName(sc.next());
+
 
        Car cotxe = new Car(); //cotxe és una instància de la classe Car
        System.out.println(MSG2);
@@ -46,8 +49,14 @@ public class Main {
        Square quadrat = new Square();
        System.out.println(MSG10);
        quadrat.setHeight(sc.nextFloat());
+       while(quadrat.getHeight() < 0 ){
+           System.out.println(MSG_Error);
+           quadrat.setHeight(sc.nextFloat());
+       }
        System.out.println(MSG11);
        quadrat.setWidth(sc.nextFloat());
+       System.out.println(MSG12);
+       quadrat.setLength(sc.nextFloat());
 
        System.out.println(alumne.getName());
        System.out.println("Model del cotxe: "+cotxe.getModel());
@@ -60,5 +69,7 @@ public class Main {
        System.out.println("Tipus de cadira: "+cadira.getTipus());
        System.out.println("Alçada del quadrat: "+quadrat.getHeight());
        System.out.println("Amplada del quadrat: "+quadrat.getWidth());
+       System.out.println("Llargària del quadrat: "+quadrat.getLength());
+       System.out.println("El volum del quadrat és "+quadrat.getSquareVolume()+" i l'àrea és "+quadrat.getSquareArea());
     }
 }

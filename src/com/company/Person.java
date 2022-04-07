@@ -1,8 +1,8 @@
 package com.company;
 
 public class Person {
-    String name, surname, dni;
-    float height, width;
+    private String name, surname, dni;
+    private float height, width;
 
     //public Person(String name, String surname){
       //  this.setName(name);

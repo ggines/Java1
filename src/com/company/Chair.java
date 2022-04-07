@@ -1,7 +1,7 @@
 package com.company;
 
 public class Chair {
-    String color, tipus;
+    private String color, tipus;
 
     public String getColor(){
         return this.color;

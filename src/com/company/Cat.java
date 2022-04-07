@@ -1,8 +1,8 @@
 package com.company;
 
 public class Cat {
-    String breed, color;
-    float weight;
+    private String breed, color;
+    private float weight;
 
     public String getBreed(){
         return this.breed;
